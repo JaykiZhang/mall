@@ -64,4 +64,11 @@
 	<select id="selectParentId" parameterType="Integer" resultMap="categoryMap">
 		select * from category where parent_id=#{one}
 	</select>
+	
+	<update id="updateProduct" parameterType="Product">
+		update product set category_id=#{categoryId},name=#{name},subtitle=#{subtitle},main_image=#{mainImage},
+		price=#{price},stock=#{stock},status=#{status},update_time=now()
+		where id=#{id}
+	</update>
+	
 </mapper>

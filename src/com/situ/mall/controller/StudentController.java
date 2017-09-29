@@ -89,8 +89,10 @@ public class StudentController {
 		return "product_update";
 	}
 	@RequestMapping("updateProduct")
-	public String updateProduct(){
-		return "redirect:/product/productLsit.action";
+	public String updateProduct(Product product){
+		productService.updateProduct(product);
+		
+		return "redirect:/product/productList.action";
 	}
 	@RequestMapping("selectOne")
 	public @ResponseBody List<Category> selectProvinces(ModelAndView modelAndView){

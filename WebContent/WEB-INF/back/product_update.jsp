@@ -8,7 +8,9 @@
 <title>Insert title here</title>
 	<%@include file="../common/head.jsp" %>
 	<script src="http://malsup.github.com/jquery.form.js "></script>
-	
+	<script src="http://malsup.github.com/jquery.form.js "></script>
+	<link href="${ctx}/resources/thirdlib/kindeditor/themes/default/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" charset="utf-8" src="${ctx}/resources/thirdlib/kindeditor/kindeditor-all-min.js"></script>
 	<div class="container">
 		    <div class="row">
 		        <div class="col-md-2">
@@ -34,7 +36,7 @@
 		             	<div class="alert alert-danger" role="alert">注意！</div>
 		           		<hr/>
 		           		<form action="${ctx}/product/updateProduct.action" method="post" enctype="multipart/form-data" id="form-add">
-			           		<!-- 分类id：<input type="text" name="categoryId" id="" class="form-control"/><br> -->
+			           		分类id：<input type="text" name="id" value="${product.id}" class="form-control" readonly="readonly"/><br>
 			           		一级分类：<select id="one" onchange="selecttwo(this)">
 			           					<option value=""></option>
 			           				  </select>
@@ -64,9 +66,7 @@
 			           				  	   <img alt="没有图片" id="imgId" src="/pic/${product.mainImage}" width="100" height="100">
 								           <input type="hidden" name="mainImage" id="mainImage"/>
 								           <input type="file" name="pictureFile" onchange="uploadPic();"/>
-								       </div>
-			           				  
-			           				  
+								       </div>		           			
 							<button class="btn btn-primary" type="submit">提交</button>
 						</form>
 					</div>

@@ -25,4 +25,6 @@ public interface ProductDao {
 
 	List<Category> selectParentId(Integer one);
 
+	void updateProduct(Product product);
+
 }
