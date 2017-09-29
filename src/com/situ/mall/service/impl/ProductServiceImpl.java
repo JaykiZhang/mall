@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.situ.mall.dao.ProductDao;
+import com.situ.mall.pojo.Category;
 import com.situ.mall.pojo.Product;
 import com.situ.mall.service.IProductService;
 import com.situ.mall.vo.PageBean;
@@ -53,5 +54,20 @@ public class ProductServiceImpl implements IProductService {
 	public Product findById(int id) {
 		Product product = productDao.findById(id);
 		return product;
+	}
+
+	@Override
+	public List<Category> selectOne() {
+		return productDao.selectOne();
+	}
+
+	@Override
+	public List<Category> selectParentId(Integer one) {
+		return productDao.selectParentId(one);
+	}
+
+	@Override
+	public void updateProduct(Product product) {
+		
 	}
 }

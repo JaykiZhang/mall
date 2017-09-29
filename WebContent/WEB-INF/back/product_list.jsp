@@ -38,15 +38,13 @@
 			<div class="col-md-2">
 				<div class="list-group">
 				  <a href="${ctx}/product/productList.action" class="list-group-item active">学生管理</a>
-				  <a href="student_search.jsp" class="list-group-item">学生搜索</a>
 				  <a href="${ctx}/product/addProduct.action" class="list-group-item">添加商品</a>
 				</div>
 			</div>
 			<!--左边列表占12份中的10份-->
 			<div class="col-md-10">
 				<ul class="nav nav-tabs">
-				  <li role="presentation" class="active"><a href="${ctx}/product/productList.action">学生管理</a></li>
-				  <li role="presentation"><a href="student_search.jsp">学生搜索</a></li>
+				  <li role="presentation" class="active"><a href="${ctx}/product/productList.action">商品管理</a></li>
 				  <li role="presentation"><a href="${ctx}/product/addProduct.action">添加商品</a></li>
 				</ul>
 				<input class="btn active" type="button" onclick="deleteAll();" value="批量删除"/>
@@ -59,8 +57,8 @@
 							<th>分类id</th>
 							<th>商品名称</th>
 							<th>商品副标签</th>
-							<!-- <th>产品主图</th>
-							<th>图片地址</th>
+							<th>产品主图</th>
+							<!-- <th>图片地址</th>
 							<th>商品详情</th> -->
 							<th>价格</th>
 							<th>库存</th>

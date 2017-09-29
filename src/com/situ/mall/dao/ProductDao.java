@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.situ.mall.pojo.Category;
 import com.situ.mall.pojo.Product;
 
 public interface ProductDao {
@@ -19,5 +20,9 @@ public interface ProductDao {
 	void updateStatus(@Param("status")int status,@Param("id")int id);
 
 	Product findById(int id);
+
+	List<Category> selectOne();
+
+	List<Category> selectParentId(Integer one);
 
 }

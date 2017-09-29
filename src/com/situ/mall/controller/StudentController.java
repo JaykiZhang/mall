@@ -3,7 +3,7 @@ package com.situ.mall.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -12,7 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.situ.mall.pojo.Category;
 import com.situ.mall.pojo.Product;
 import com.situ.mall.service.IProductService;
 import com.situ.mall.vo.PageBean;
@@ -79,9 +82,36 @@ public class StudentController {
 		
 	}
 	@RequestMapping("findById")
-	public String findById(int id){
+	public String findById(int id,Model model){
 		Product product = productService.findById(id);
-		System.out.println(product);
-		return "product_update";		
+		System.out.println("======================================"+product);
+		model.addAttribute("product",product);		
+		return "product_update";
 	}
+	@RequestMapping("updateProduct")
+	public String updateProduct(){
+		return "redirect:/product/productLsit.action";
+	}
+	@RequestMapping("selectOne")
+	public @ResponseBody List<Category> selectProvinces(ModelAndView modelAndView){
+		List<Category> list = productService.selectOne();
+		for (Category category : list) {
+			System.out.println(category);
+		}
+		modelAndView.addObject("one", list);
+		
+		return list;
+	}
+	@RequestMapping(value="/selectParentId")
+	public @ResponseBody List<Category> selectTwo(Integer one){
+		System.out.println(one);
+		List<Category> list = productService.selectParentId(one);
+		for (Category category : list) {
+			System.out.println(category);
+		}
+		
+		return list;
+	}
+
+	
 }

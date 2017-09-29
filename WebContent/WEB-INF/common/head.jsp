@@ -18,16 +18,16 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">教务管理系统</a>
+	      <a class="navbar-brand" href="${ctx}/product/addProduct.action">商城后台管理系统</a>
 	    </div>
 	
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;学生管理 </a></li>
-	        <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;班级管理</a></li>
-	        <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;课程管理</a></li>
-	        <li><a href="#"><span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;教务管理</a></li>
+	        <li class="active"><a href="${ctx}/product/addProduct.action""><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;商品管理 </a></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;类别管理</a></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;管理</a></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;管理</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="/ShiXun09/login?method=logout"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
